@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .event-info, .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Event Information -->
+    <div class="event-info">
+        <h2>🌟 Coding Workshop 2024</h2>
+        <p><strong>Date:</strong> May 5, 2025</p>
+        <p><strong>Time:</strong> 10:00 AM – 4:00 PM</p>
+        <p><strong>Location:</strong> Tech Hub Center, Kuala Lumpur</p>
+        <p><strong>Description:</strong> Join us for a full-day hands-on coding workshop to improve your web development skills. No experience needed!</p>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="form-container">
+        <h2>Register Now</h2>
+        <form action="register_event.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="ticket">Ticket Type:</label>
+            <select name="ticket" required>
+                <option value="">-- Choose Ticket --</option>
+                <option value="Free">Free</option>
+                <option value="VIP">VIP (RM50)</option>
+            </select>
+
+            <button type="submit">Submit Registration</button>
+        </form>
+    </div>
+
+</body>
+</html>

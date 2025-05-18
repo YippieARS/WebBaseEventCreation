@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: url('websitebg4.jpg') no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #333;
+      display: flex;
+      height: 100vh;
+    }
+
+    
+    .sidebar {
+      width: 250px;
+      background-color: #ddd7d5;
+      padding: 30px 20px 80px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.collapsed {
+      transform: translateX(-100%);
+    }
+
+    .sidebar h2 {
+      font-size: 22px;
+      margin-bottom: 40px;
+      color: #fe4500;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 16px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #fe4500;
+      color: white;
+    }
+
+    .main-content {
+      flex: 1;
+      margin-left: 250px;
+      padding: 40px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .main-content.collapsed {
+      margin-left: 0;
+    }
+
+    .about-section {
+      padding: 80px 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0);
+      color: white;
+    }
+
+    .about-section h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #fe4500;
+    }
+
+    .about-section p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.8;
+      padding: 0 20px;
+    }
+
+    .about-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 30px;
+    }
+
+    .highlight-box {
+      background: #00000;
+      padding: 30px;
+      border-radius: 12px;
+      width: 280px;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .highlight-box:hover {
+      background: #fe4500;
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .highlight-box h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .highlight-box p {
+      font-size: 16px;
+    }
+
+    
+    .toggle-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 270px;
+      background-color: #fe4500;
+      color: white;
+      border: none;
+      font-size: 18px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1100;
+      transition: left 0.3s ease;
+    }
+
+    .toggle-btn.move-right {
+      left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.collapsed {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .main-content.collapsed {
+        margin-left: 0;
+      }
+
+      .toggle-btn {
+        left: 20px;
+      }
+
+      .toggle-btn.move-right {
+        left: 270px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <h2>Web Based Event Creation Management System</h2>
+    <a href="organizer_dashboard.php">🏠Dashboard</a>
+    <a href="create_event.html">➕ Host Event</a>
+    <a href="my_events.php">📋 My Events</a>
+    <a href="ContactOrganizer.html">📞 Contact Us</a>
+    <a href="logout.php">🚪 Logout</a>
+</div>
+
+<!-- Main Content -->
+<div class="main-content" id="mainContent">
+    <!-- About Us Section -->
+    <div class="about-section">
+        <h1>About System</h1>
+        <p>
+            Welcome to the Web-Based Event Creation Management System — your all-in-one platform for organizing and managing events with ease. Whether you're planning workshops, conferences, webinars, or community events, our system is designed to streamline your workflow and empower you to focus on what matters most: delivering successful events.
+        </p>
+
+        <div class="about-highlights">
+            <div class="highlight-box">
+                <h3>🚀 What You Can Do as an Organizer</h3>
+                <p>
+                    📝 Create Events: Easily publish new events.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>📅 Schedule with Confidence</h3>
+                <p>
+                    Set event dates, times, and locations, all in one place.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>📊 Edit or Delete your events</h3>
+                <p>
+                    Edit or delete your event whenever needed.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🖼️ Upload your poster of the Event</h3>
+                <p>
+                    Upload posters to promote your event.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toggle Button -->
+<button class="toggle-btn" id="toggleBtn">☰</button>
+
+<script>
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('collapsed');
+        toggleBtn.classList.toggle('move-right');
+    });
+</script>
+
+</body>
+</html>

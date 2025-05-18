@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us</title>
+  <style>
+    * { box-sizing: border-box; }
+
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-size: cover;
+  color: #333;
+}
+
+    .header {
+      overflow: hidden;
+      background-color: #ffffff;
+      padding: 20px 10px;
+      border-bottom: 2px solid orange;
+    }
+
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+
+    .header a.logo {
+      font-size: 20px;
+    }
+
+    .header a:hover {
+      background-color: #fe4500;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+      .header-right {
+        float: none;
+      }
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 20px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .about-section h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #fe4500;
+    }
+
+    .about-section p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.8;
+      padding: 0 20px;
+    }
+
+    .about-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 30px;
+    }
+
+    .highlight-box {
+      background: #00000;
+      padding: 30px;
+      border-radius: 12px;
+      width: 280px;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .highlight-box:hover {
+      background: #fe4500;
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .highlight-box h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .highlight-box p {
+      font-size: 16px;
+    }
+
+
+    .about-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: url('websitebg.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <a href="Home.html" class="logo">Web Based Event Creation Management System
+  </a>
+  <div class="header-right">
+    <a href="user_event.php">Upcoming Events</a>
+    <a href="Contact.html">Contact Us</a>
+  </div>
+</div>
+
+<!-- About Us Section -->
+<div class="about-section">
+  <h1>About Us </h1>
+  <p>
+    The Web Based Event Management System is a website where you easily view upcoming events, sign up for events
+  </p>
+
+  <div class="about-highlights">
+    <div class="highlight-box">
+      <h3>Simple & Intuitive</h3>
+      <p>
+        Our website makes event creation as easy as a few clicks no technical skills required.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <h3>Sign Up for Events Easily & View Event Details</h3>
+      <p>
+        Sign Up for upcoming events, and view event details such as location, time, organizers and much more. 
+      </p>
+    </div>
+
+     </div>
+</div>
+
+</body>
+</html>
