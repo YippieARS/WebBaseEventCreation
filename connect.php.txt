@@ -1,0 +1,25 @@
+<?php
+
+$name = $_POST['name'];
+$mid  = $_POST['mid];
+$email = $_POST['email'];
+$eventitle = $_POST['eventitle'];
+$eventdate = $_POST['eventdate'];
+$eventdesc = $_POST['eventdesc'];
+
+//Database connection
+
+$conn = new mysqli ('localhost', 'root' , 'Huaweipralx2@3188' , 'databaseec');
+if ($conn ->connect_error){
+	die('Connection Failed : '.$conn->connect_error);
+}else{
+  $stmt = $conn->prepare("insert into registration(name, mid, email, eventitle, eventdate, eventdesc,)
+values (?, ?, ?, ?, ?, ?,)")
+ $stmt->bind_param("s,i,s,s,s,s", $name, $mid, $email, $eventitle, $eventdate, $eventdate);
+ $stmt->execute();
+ echo "Event Registration Successful!";
+ $stmt->close();
+ $conn->close();
+}
+
+?>

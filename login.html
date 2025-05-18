@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: url('websitebg.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <img src="logo.jpg" alt="Login Icon" class="login-icon">         	
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+            <div class="input-group">
+                <label for="username">Username/Matric ID</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+            <p>To return Home Page <a href="Home.html">Click Here</a></p>
+        </form>
+    </div>
+
+</body>
+</html>

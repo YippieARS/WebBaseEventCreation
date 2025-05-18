@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Host an Event</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+    .form-container {
+      background: white;
+      padding: 25px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #219150;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Host Your Event</h2>
+    <form action="submit_event_db.php" method="POST">
+      <input type="text" name="title" placeholder="Event Title" required>
+      <input type="date" name="date" required>
+      <input type="time" name="time" required>
+      <textarea name="description" rows="4" placeholder="Describe your event..." required></textarea>
+      <input type="text" name="location" placeholder="Location" required>
+      <button type="submit">Submit Event</button>
+    </form>
+  </div>
+</body>
+</html>
